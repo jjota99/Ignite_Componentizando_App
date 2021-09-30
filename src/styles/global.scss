@@ -14,11 +14,18 @@
   box-sizing: border-box;
 }
 
+#root {
+  display: flex;
+  flex-direction: row;
+}
+
 body {
   font: 16px "Poppins", Arial, sans-serif;
   color: #FBFBFB;
   background: var(--background);
 }
+
+
 
 input, textarea {
   font-family: "Poppins";

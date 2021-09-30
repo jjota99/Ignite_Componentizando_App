@@ -1,12 +1,21 @@
-import { SideBar } from "./components/SideBar";
+import { useState } from "react";
+import { GenreResponseProps, SideBar } from "./components/SideBar";
+import { Content } from "./components/Content";
 
-import './styles/global.scss';
-
+import "./styles/global.scss";
 
 export function App() {
-  return(
+  const [selectedGenreId, setSelectedGenreId] = useState<number>(0);
+  const [genres, setGenres] = useState<GenreResponseProps[]>([]);
+  return (
     <>
-    <SideBar/>
+      <SideBar
+        setGenres={setGenres}
+        genres={genres}
+        setSelectedGenreId={setSelectedGenreId}
+        selectedGenreId={selectedGenreId}
+      />
+      <Content selectedGenreId={selectedGenreId} genres={genres} />
     </>
-  )
+  );
 }
